@@ -7,7 +7,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
 [![Requires PHP](https://img.shields.io/travis/php-v/oanhnn/laravel-dummy.svg)](https://travis-ci.org/oanhnn/laravel-dummy)
 
-A service made to provide, set up and use the library [dummy-php](https://github.com/influxdata/dummy-php/) in Laravel.
+A Laravel package skeleton.
 
 ## TODO
 
