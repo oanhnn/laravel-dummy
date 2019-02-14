@@ -31,7 +31,7 @@ class ServiceProvider extends IlluminateServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 dirname(__DIR__) . '/config/dummy.php' => base_path('config/dummy.php'),
-            ], 'config');
+            ], 'laravel-dummy-config');
         }
 
         // other booting ...

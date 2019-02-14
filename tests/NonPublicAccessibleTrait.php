@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Dummy\Tests;
+namespace Tests;
 
 use InvalidArgumentException;
 use ReflectionMethod;
@@ -11,7 +11,7 @@ use ReflectionProperty;
  *
  * Help access to non-public property and method of an object
  *
- * @package     Laravel\Settings\Tests
+ * @package     Tests
  * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
  * @license     The MIT license
  */

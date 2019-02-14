@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Dummy\Tests\Unit;
+namespace Tests\Unit;
 
-use Laravel\Dummy\Tests\TestCase;
+use Tests\TestCase;
 
 /**
  * Class DummyTest
  *
- * @package     Laravel\Dummy\Tests\Unit
+ * @package     Tests\Unit
  * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
  * @license     The MIT license
  */

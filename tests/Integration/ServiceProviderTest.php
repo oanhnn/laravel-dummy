@@ -1,23 +1,20 @@
 <?php
 
-namespace Laravel\Dummy\Tests\Integration;
+namespace Tests\Integration;
 
 use Illuminate\Filesystem\Filesystem;
 use Laravel\Dummy\ServiceProvider;
-use Laravel\Dummy\Tests\NonPublicAccessibleTrait;
-use Laravel\Dummy\Tests\TestCase;
+use Tests\TestCase;
 
 /**
  * Class ServiceProviderTest
  *
- * @package     Laravel\Dummy\Tests\Integration
+ * @package     Tests\Integration
  * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
  * @license     The MIT license
  */
 class ServiceProviderTest extends TestCase
 {
-    use NonPublicAccessibleTrait;
-
     /**
      * @var \Illuminate\Filesystem\Filesystem
      */
@@ -48,18 +45,18 @@ class ServiceProviderTest extends TestCase
     /**
      * Test file influxdb.php is existed in config directory after run
      *
-     * php artisan vendor:publish --provider="Laravel\\Dummy\\ServiceProvider" --tag=config
+     * php artisan vendor:publish --provider="Laravel\\Dummy\\ServiceProvider" --tag=laravel-dummy-config
      */
     public function testPublishVendorConfig()
     {
         $sourceFile = dirname(dirname(__DIR__)) . '/config/dummy.php';
-        $targetFile = config_path('dummy.php');
+        $targetFile = base_path('config/dummy.php');
 
         $this->assertFileNotExists($targetFile);
 
         $this->artisan('vendor:publish', [
             '--provider' => 'Laravel\\Dummy\\ServiceProvider',
-            '--tag' => 'config',
+            '--tag' => 'laravel-dummy-config',
         ]);
 
         $this->assertFileExists($targetFile);
