@@ -1,7 +1,7 @@
 # Laravel Dummy
 
 [![Latest Version](https://img.shields.io/packagist/v/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
-[![Software License](https://img.shields.io/github/license/oanhnn/laravel-dummy.svg)](LICENSE.md)
+[![Software License](https://img.shields.io/github/license/oanhnn/laravel-dummy.svg)](LICENSE)
 [![Build Status](https://img.shields.io/travis/oanhnn/laravel-dummy/master.svg)](https://travis-ci.org/oanhnn/laravel-dummy)
 [![Coverage Status](https://img.shields.io/coveralls/github/oanhnn/laravel-dummy/master.svg)](https://coveralls.io/github/oanhnn/laravel-dummy?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)

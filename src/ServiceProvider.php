@@ -30,7 +30,7 @@ class ServiceProvider extends IlluminateServiceProvider
         // publishes
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                dirname(__DIR__) . '/config/dummy.php' => config_path('dummy.php'),
+                dirname(__DIR__) . '/config/dummy.php' => base_path('config/dummy.php'),
             ], 'config');
         }
 
