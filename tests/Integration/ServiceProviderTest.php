@@ -43,7 +43,7 @@ class ServiceProviderTest extends TestCase
     }
 
     /**
-     * Test file influxdb.php is existed in config directory after run
+     * Tests config file is existed in config directory after run
      *
      * php artisan vendor:publish --provider="Laravel\\Dummy\\ServiceProvider" --tag=laravel-dummy-config
      */
