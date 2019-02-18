@@ -70,7 +70,7 @@ class ServiceProviderTest extends TestCase
     {
         $config = config('dummy');
 
-        $this->assertIsArray($config);
+        $this->assertTrue(is_array($config));
 
         // TODO: assert default config values
     }
