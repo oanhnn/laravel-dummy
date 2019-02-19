@@ -54,8 +54,6 @@ class ServiceProvider extends IlluminateServiceProvider
 
             return $instance;
         });
-
-        $this->app->alias(Dummy::class, 'dummy');
     }
 
     /**
@@ -67,7 +65,6 @@ class ServiceProvider extends IlluminateServiceProvider
     {
         return [
             Dummy::class,
-            'dummy',
         ];
     }
 }

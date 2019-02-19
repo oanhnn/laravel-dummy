@@ -4,7 +4,6 @@ namespace Tests;
 
 use Laravel\Dummy\ServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Tests\Concerns\WithFakeDateTime;
 
 /**
  * Class TestCase
@@ -15,22 +14,6 @@ use Tests\Concerns\WithFakeDateTime;
  */
 abstract class TestCase extends BaseTestCase
 {
-    /**
-     * Boot the testing helper traits.
-     *
-     * @return array
-     */
-    protected function setUpTraits()
-    {
-        $uses = parent::setUpTraits();
-
-        if (isset($uses[WithFakeDateTime::class])) {
-            $this->setUpFakeDateTime();
-        }
-
-        return $uses;
-    }
-
     /**
      * Get package providers.
      *

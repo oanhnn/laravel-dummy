@@ -46,8 +46,10 @@ class ServiceProviderTest extends TestCase
      * Tests config file is existed in config directory after run
      *
      * php artisan vendor:publish --provider="Laravel\\Dummy\\ServiceProvider" --tag=laravel-dummy-config
+     *
+     * @test
      */
-    public function testPublishVendorConfig()
+    public function it_will_publish_vendor_config()
     {
         $sourceFile = dirname(dirname(__DIR__)) . '/config/dummy.php';
         $targetFile = base_path('config/dummy.php');
@@ -65,8 +67,10 @@ class ServiceProviderTest extends TestCase
 
     /**
      * Test config values are merged
+     *
+     * @test
      */
-    public function testDefaultConfigValues()
+    public function it_provides_default_config()
     {
         $config = config('dummy');
 
@@ -77,8 +81,10 @@ class ServiceProviderTest extends TestCase
 
     /**
      * Test manager is bound in application container
+     *
+     * @test
      */
-    public function testBoundInstances()
+    public function it_bound_some_services()
     {
         $classes = (new ServiceProvider($this->app))->provides();
 

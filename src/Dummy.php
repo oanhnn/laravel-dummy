@@ -11,5 +11,11 @@ namespace Laravel\Dummy;
  */
 class Dummy
 {
-    // dummy class
+    /**
+     * @param array $config
+     */
+    public function __construct(array $config)
+    {
+        // do somethings
+    }
 }

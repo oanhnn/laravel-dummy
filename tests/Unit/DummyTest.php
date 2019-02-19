@@ -14,7 +14,10 @@ use PHPUnit\Framework\TestCase;
 
 class DummyTest extends TestCase
 {
-    public function testExample()
+    /**
+     * @test
+     */
+    public function it_is_true()
     {
         $this->assertTrue(true);
     }

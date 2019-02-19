@@ -20,6 +20,6 @@ class Dummy extends Facade
      */
     public static function getFacadeAccessor()
     {
-        return 'dummy';
+        return \Laravel\Dummy\Dummy::class;
     }
 }
