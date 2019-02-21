@@ -46,7 +46,7 @@ See all change logs in [CHANGELOG](CHANGELOG.md)
 $ git clone git@github.com/oanhnn/laravel-dummy.git /path
 $ cd /path
 $ composer install
-$ composer phpunit
+$ composer test
 ```
 
 ## Contributing

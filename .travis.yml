@@ -1,3 +1,4 @@
+dist: xenial
 language: php
 
 cache:
@@ -27,6 +28,7 @@ matrix:
       env: LARAVEL='5.7.*' TESTBENCH='3.7.*'
 
 before_install:
+  - if [[ $COVERAGE != 1 ]]; then phpenv config-rm xdebug.ini; fi
   - travis_retry composer self-update
   - travis_retry composer require --no-update --no-interaction "illuminate/support:${LARAVEL}" "orchestra/testbench:${TESTBENCH}"
 
@@ -35,7 +37,8 @@ install:
 
 script:
   - php vendor/bin/phpcs
-  - php vendor/bin/phpunit --coverage-clover=build/logs/clover.xml
+  - if [[ $COVERAGE != 1 ]]; then php vendor/bin/phpunit --testsuite=tests; fi
+  - if [[ $COVERAGE == 1 ]]; then php vendor/bin/phpunit --testsuite=tests --coverage-clover=build/logs/clover.xml; fi
 
 after_success:
   - if [[ $COVERAGE = '1' ]]; then

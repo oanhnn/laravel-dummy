@@ -47,10 +47,15 @@
   },
   "scripts": {
     "test": [
-      "@php vendor/squizlabs/php_codesniffer/bin/phpcs",
-      "@php vendor/phpunit/phpunit/phpunit --coverage-html storage/coverage"
+      "@php vendor/phpunit/phpunit/phpunit --testdox --testsuite=tests"
     ],
-    "format": [
+    "coverage": [
+      "@php vendor/phpunit/phpunit/phpunit --coverage-html storage/coverage --testsuite=tests"
+    ],
+    "cs-check": [
+      "@php vendor/squizlabs/php_codesniffer/bin/phpcs"
+    ],
+    "cs-fix": [
       "@php vendor/squizlabs/php_codesniffer/bin/phpcbf"
     ]
   },
