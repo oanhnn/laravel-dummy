@@ -15,6 +15,18 @@ use Orchestra\Testbench\TestCase as BaseTestCase;
 abstract class TestCase extends BaseTestCase
 {
     /**
+     * Define environment setup.
+     *
+     * @param  \Illuminate\Foundation\Application $app
+     *
+     * @return void
+     */
+    protected function getEnvironmentSetUp($app)
+    {
+        // Define your environment setup.
+    }
+
+    /**
      * Get package providers.
      *
      * @param  \Illuminate\Foundation\Application $app
@@ -25,17 +37,5 @@ abstract class TestCase extends BaseTestCase
         return [
             ServiceProvider::class,
         ];
-    }
-
-    /**
-     * Define environment setup.
-     *
-     * @param  \Illuminate\Foundation\Application $app
-     *
-     * @return void
-     */
-    protected function getEnvironmentSetUp($app)
-    {
-        // Define your environment setup.
     }
 }

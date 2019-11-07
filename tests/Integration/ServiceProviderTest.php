@@ -2,8 +2,10 @@
 
 namespace Tests\Integration;
 
+use Carbon\Carbon;
 use Illuminate\Filesystem\Filesystem;
 use Laravel\Dummy\ServiceProvider;
+use Tests\Concerns\WithFakeDateTime;
 use Tests\TestCase;
 
 /**
@@ -21,35 +23,13 @@ class ServiceProviderTest extends TestCase
     protected $files;
 
     /**
-     * Set up before test
-     */
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->files = new Filesystem();
-    }
-
-    /**
-     * Clear up after test
-     */
-    protected function tearDown(): void
-    {
-        $this->files->delete([
-            $this->app->configPath('dummy.php'),
-        ]);
-
-        parent::tearDown();
-    }
-
-    /**
      * Tests config file is existed in config directory after run
      *
      * php artisan vendor:publish --provider="Laravel\\Dummy\\ServiceProvider" --tag=laravel-dummy-config
      *
-     * @test
+     * @return void
      */
-    public function it_will_publish_vendor_config()
+    public function testItShouldPublishVendorConfig()
     {
         $sourceFile = dirname(dirname(__DIR__)) . '/config/dummy.php';
         $targetFile = base_path('config/dummy.php');
@@ -66,11 +46,34 @@ class ServiceProviderTest extends TestCase
     }
 
     /**
+     * Test migration class will be created after run
+     *
+     * php artisan vendor:publish --provider="Laravel\\Dummy\\ServiceProvider" --tag=laravel-dummy-migration
+     *
+     * @return void
+     */
+    public function testItShouldPublishVendorMigration()
+    {
+        $sourceFile = dirname(dirname(__DIR__)) . '/database/migrations/create_dummy_table.stub';
+        $targetFile = database_path('migrations/2019_11_07_002200_create_dummy_table.php');
+
+        $this->assertFileNotExists($targetFile);
+
+        $this->artisan('vendor:publish', [
+            '--provider' => 'Laravel\\Dummy\\ServiceProvider',
+            '--tag' => 'laravel-dummy-migration',
+        ]);
+
+        $this->assertFileExists($targetFile);
+        $this->assertEquals(file_get_contents($sourceFile), file_get_contents($targetFile));
+    }
+
+    /**
      * Test config values are merged
      *
-     * @test
+     * @return void
      */
-    public function it_provides_default_config()
+    public function testItShouldProvidesDefaultConfig()
     {
         $config = config('dummy');
 
@@ -82,9 +85,9 @@ class ServiceProviderTest extends TestCase
     /**
      * Test manager is bound in application container
      *
-     * @test
+     * @return void
      */
-    public function it_bound_some_services()
+    public function testItShouldBoundSomeServices()
     {
         $classes = (new ServiceProvider($this->app))->provides();
 
@@ -94,5 +97,31 @@ class ServiceProviderTest extends TestCase
                 //$this->assertInstanceOf($class, $this->app->make($class));
             }
         }
+    }
+
+    /**
+     * Set up before test
+     */
+    protected function setUp(): void
+    {
+        $now = Carbon::create(2019, 11, 7, 0, 22, 0);
+        Carbon::setTestNow($now);
+
+        parent::setUp();
+
+        $this->files = new Filesystem();
+    }
+
+    /**
+     * Clear up after test
+     */
+    protected function tearDown(): void
+    {
+        $this->files->delete([
+            $this->app->configPath('dummy.php'),
+            $this->app->databasePath('migrations/2019_11_07_002200_create_dummy_table.php')
+        ]);
+
+        parent::tearDown();
     }
 }

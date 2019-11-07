@@ -2,6 +2,7 @@
 
 namespace Laravel\Dummy;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 /**
@@ -32,9 +33,26 @@ class ServiceProvider extends IlluminateServiceProvider
             $this->publishes([
                 dirname(__DIR__) . '/config/dummy.php' => base_path('config/dummy.php'),
             ], 'laravel-dummy-config');
+
+            $this->publishes([
+                dirname(__DIR__) . '/database/migrations/create_dummy_table.stub'
+                => database_path('migrations/' . Carbon::now()->format('Y_m_d_His') . '_create_dummy_table.php'),
+            ], 'laravel-dummy-migration');
         }
 
         // other booting ...
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [
+            Dummy::class,
+        ];
     }
 
     /**
@@ -54,17 +72,5 @@ class ServiceProvider extends IlluminateServiceProvider
 
             return $instance;
         });
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return [
-            Dummy::class,
-        ];
     }
 }
