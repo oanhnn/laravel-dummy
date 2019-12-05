@@ -1,11 +1,11 @@
 # Laravel Dummy
 
+[![Build Status](https://img.shields.io/github/workflow/status/oanhnn/laravel-social-credentials/CI?label=CI)](https://github.com/oanhnn/laravel-dummy/actions)
+[![Coverage Status](https://img.shields.io/coveralls/github/oanhnn/laravel-dummy/master.svg)](https://coveralls.io/github/oanhnn/laravel-dummy)
 [![Latest Version](https://img.shields.io/packagist/v/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
-[![Software License](https://img.shields.io/github/license/oanhnn/laravel-dummy.svg)](LICENSE)
-[![Build Status](https://img.shields.io/travis/oanhnn/laravel-dummy/master.svg)](https://travis-ci.org/oanhnn/laravel-dummy)
-[![Coverage Status](https://img.shields.io/coveralls/github/oanhnn/laravel-dummy/master.svg)](https://coveralls.io/github/oanhnn/laravel-dummy?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
-[![Requires PHP](https://img.shields.io/travis/php-v/oanhnn/laravel-dummy.svg)](https://travis-ci.org/oanhnn/laravel-dummy)
+[![Requires PHP](https://img.shields.io/packagist/php-v/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
+[![Software License](https://img.shields.io/packagist/l/oanhnn/laravel-dummy.svg)](LICENSE)
 
 A Laravel package skeleton.
 
