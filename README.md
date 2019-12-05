@@ -1,23 +1,23 @@
 # Laravel Dummy
 
-[![Build Status](https://img.shields.io/github/workflow/status/oanhnn/laravel-social-credentials/CI?label=CI)](https://github.com/oanhnn/laravel-dummy/actions)
+[![Build Status](https://img.shields.io/github/workflow/status/oanhnn/laravel-dummy/ci.svg?label=ci)](https://github.com/oanhnn/laravel-dummy/actions)
 [![Coverage Status](https://img.shields.io/coveralls/github/oanhnn/laravel-dummy/master.svg)](https://coveralls.io/github/oanhnn/laravel-dummy)
-[![Latest Version](https://img.shields.io/packagist/v/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
+[![Latest Version](https://img.shields.io/packagist/v/oanhnn/laravel-dummy.svg?label=latest%20version)](https://packagist.org/packages/oanhnn/laravel-dummy)
 [![Total Downloads](https://img.shields.io/packagist/dt/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
 [![Requires PHP](https://img.shields.io/packagist/php-v/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
-[![Software License](https://img.shields.io/packagist/l/oanhnn/laravel-dummy.svg)](LICENSE)
+[![Software License](https://img.shields.io/github/license/oanhnn/laravel-dummy.svg)](LICENSE)
 
 A Laravel package skeleton.
 
 ## TODO
 
 - [ ] Make repository on [Github](https://github.com)
-- [ ] Make repository on [Travis](https://travis.org)
-- [ ] Make repository on [Coveralls](https://coveralls.io)
-- [ ] Make repository on [Packagist](https://packagist.org)
+- [ ] Make base source & first commit
+- [ ] Setup Github Workflow
 - [ ] Write logic classes
 - [ ] Write test scripts
 - [ ] Write README & documents
+- [ ] Make repository on [Packagist](https://packagist.org)
 
 ## Requirements
 
