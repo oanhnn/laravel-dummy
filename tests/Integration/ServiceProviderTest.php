@@ -5,7 +5,6 @@ namespace Tests\Integration;
 use Carbon\Carbon;
 use Illuminate\Filesystem\Filesystem;
 use Laravel\Dummy\ServiceProvider;
-use Tests\Concerns\WithFakeDateTime;
 use Tests\TestCase;
 
 /**

@@ -1,6 +1,6 @@
 # Laravel Dummy
 
-[![Build Status](https://img.shields.io/github/workflow/status/oanhnn/laravel-dummy/ci.svg?label=ci)](https://github.com/oanhnn/laravel-dummy/actions)
+[![Build Status](https://github.com/oanhnn/laravel-dummy/workflows/CI/badge.svg)](https://github.com/oanhnn/laravel-dummy/actions)
 [![Coverage Status](https://img.shields.io/coveralls/github/oanhnn/laravel-dummy/master.svg)](https://coveralls.io/github/oanhnn/laravel-dummy)
 [![Latest Version](https://img.shields.io/packagist/v/oanhnn/laravel-dummy.svg?label=latest%20version)](https://packagist.org/packages/oanhnn/laravel-dummy)
 [![Total Downloads](https://img.shields.io/packagist/dt/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
@@ -21,10 +21,8 @@ A Laravel package skeleton.
 
 ## Requirements
 
-* php >=7.1.3
-* Laravel 5.5+
-
-> Laravel 6.0+ required php 7.2+
+* php ^7.2.5
+* Laravel 6.0+
 
 ## Installation
 
