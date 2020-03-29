@@ -12,6 +12,7 @@ A Laravel package skeleton.
 ## TODO
 
 - [ ] Make repository on [Github](https://github.com)
+- [ ] Make repository on [Coveralls](https://coveralls.io)
 - [ ] Make base source & first commit
 - [ ] Setup Github Workflow
 - [ ] Write logic classes
