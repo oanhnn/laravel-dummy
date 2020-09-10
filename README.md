@@ -67,4 +67,4 @@ using the issue tracker.
 ## License
 
 This project is released under the MIT License.   
-Copyright © [Oanh Nguyen](https://oanhnn.github.io).
+Copyright © 2020 [Oanh Nguyen](https://oanhnn.github.io).
