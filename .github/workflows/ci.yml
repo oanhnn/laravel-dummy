@@ -58,6 +58,10 @@ jobs:
         dependencies:
           - highest
           - lowest
+        exclude:
+          - php: 7.2
+            LARAVEL: 8.*
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
