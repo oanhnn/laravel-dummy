@@ -76,13 +76,13 @@ jobs:
           key: cache-v1 # can be any string, change to clear the extension cache.
 
       - name: Cache extensions
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ${{ steps.cache-env.outputs.dir }}
           key: ${{ steps.cache-env.outputs.key }}
           restore-keys: ${{ steps.cache-env.outputs.key }}
 
-      - name: Setting up PHP
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
@@ -90,7 +90,7 @@ jobs:
           coverage: xdebug
           tools: composer
 
-      - name: Get Composer Cache Directory
+      - name: Setup cache dependencies
         id: composer-cache
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
@@ -99,8 +99,8 @@ jobs:
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           # Use composer.json for key, if composer.lock is not committed.
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
-          restore-keys: ${{ runner.os }}-composer-
+          key: ${{ runner.os }}-php-${{ matrix.php }}-L${{ matrix.LARAVEL }}-${{ matrix.dependencies }}-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{ runner.os }}-php-${{ matrix.php }}-L${{ matrix.LARAVEL }}-${{ matrix.dependencies }}-
 
       - name: Install lowest dependencies with composer
         run: |
@@ -121,10 +121,11 @@ jobs:
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COVERALLS_PARALLEL: true
-          COVERALLS_FLAG_NAME: php-${{ matrix.php }}-laravel-${{ matrix.LARAVEL }}-${{ matrix.dependencies }}-dependencies
+          COVERALLS_FLAG_NAME: php-${{ matrix.php }}
         run: |
           composer global require php-coveralls/php-coveralls
           php-coveralls --coverage_clover=build/logs/clover.xml -vvv
+        if: matrix.dependencies == 'highest' && matrix.LARAVEL == '8.*'
 
   coveralls-finish:
     needs: [run-tests]
