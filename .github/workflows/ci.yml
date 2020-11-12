@@ -1,15 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - 'master'
-      - 'develop'
-      - 'feature/*'
-  pull_request:
-    branches:
-      - 'master'
-      - 'develop'
+on: [push, pull_request]
 
 jobs:
   # check-sercurity:
@@ -66,7 +57,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup cache environment
-        id: cache-env
+        id: cache-extensions
         uses: shivammathur/cache-extensions@v1
         with:
           php-version: ${{ matrix.php }}
@@ -76,9 +67,9 @@ jobs:
       - name: Cache extensions
         uses: actions/cache@v2
         with:
-          path: ${{ steps.cache-env.outputs.dir }}
-          key: ${{ steps.cache-env.outputs.key }}
-          restore-keys: ${{ steps.cache-env.outputs.key }}
+          path: ${{ steps.cache-extensions.outputs.dir }}
+          key: ${{ steps.cache-extensions.outputs.key }}
+          restore-keys: ${{ steps.cache-extensions.outputs.key }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -89,13 +80,13 @@ jobs:
           tools: composer
 
       - name: Setup cache dependencies
-        id: composer-cache
+        id: cache-composer
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
-          path: ${{ steps.composer-cache.outputs.dir }}
+          path: ${{ steps.cache-composer.outputs.dir }}
           # Use composer.json for key, if composer.lock is not committed.
           key: ${{ runner.os }}-php-${{ matrix.php }}-L${{ matrix.LARAVEL }}-${{ matrix.dependencies }}-${{ hashFiles('**/composer.json') }}
           restore-keys: ${{ runner.os }}-php-${{ matrix.php }}-L${{ matrix.LARAVEL }}-${{ matrix.dependencies }}-
@@ -119,11 +110,11 @@ jobs:
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COVERALLS_PARALLEL: true
-          COVERALLS_FLAG_NAME: php-${{ matrix.php }}
+          COVERALLS_FLAG_NAME: php-${{ matrix.php }}-L${{ matrix.LARAVEL }}
         run: |
           composer global require php-coveralls/php-coveralls
           php-coveralls --coverage_clover=build/logs/clover.xml -vvv
-        if: matrix.dependencies == 'highest' && matrix.LARAVEL == '8.*'
+        if: matrix.dependencies == 'highest'
 
   coveralls-finish:
     needs: [run-tests]
