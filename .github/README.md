@@ -5,7 +5,7 @@
 [![Latest Version](https://img.shields.io/packagist/v/oanhnn/laravel-dummy.svg?label=latest%20version)](https://packagist.org/packages/oanhnn/laravel-dummy)
 [![Total Downloads](https://img.shields.io/packagist/dt/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
 [![Requires PHP](https://img.shields.io/packagist/php-v/oanhnn/laravel-dummy.svg)](https://packagist.org/packages/oanhnn/laravel-dummy)
-[![Software License](https://img.shields.io/github/license/oanhnn/laravel-dummy.svg)](LICENSE)
+[![Software License](https://img.shields.io/github/license/oanhnn/laravel-dummy.svg)](https://github.com/oanhnn/laravel-dummy/blob/master/LICENSE)
 
 A Laravel package skeleton.
 
@@ -62,7 +62,7 @@ using the issue tracker.
 ## Credits
 
 - [Oanh Nguyen](https://github.com/oanhnn)
-- [All Contributors](../../contributors)
+- [All Contributors](https://github.com/oanhnn/laravel-dummy/graphs/contributors)
 
 ## License
 
