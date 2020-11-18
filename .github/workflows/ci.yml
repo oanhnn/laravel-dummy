@@ -51,6 +51,8 @@ jobs:
         exclude:
           - php: 7.2
             LARAVEL: 8.*
+          - php: 8.0
+            dependencies: lowest
 
     runs-on: ubuntu-20.04
     steps:
