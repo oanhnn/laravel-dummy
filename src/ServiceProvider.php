@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 /**
  * Class ServiceProvider
  *
- * @package     Laravel\Dummy
+ * @package     oanhnn/laravel-dummy
  * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
  * @license     The MIT license
  */

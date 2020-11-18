@@ -11,7 +11,7 @@ use ReflectionProperty;
  *
  * Help access to non-public property and method of an object
  *
- * @package     Tests\Concerns
+ * @package     oanhnn/laravel-dummy
  * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
  * @license     The MIT license
  */

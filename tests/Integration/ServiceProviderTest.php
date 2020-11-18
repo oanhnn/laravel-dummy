@@ -10,7 +10,7 @@ use Tests\TestCase;
 /**
  * Class ServiceProviderTest
  *
- * @package     Tests\Integration
+ * @package     oanhnn/laravel-dummy
  * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
  * @license     The MIT license
  */

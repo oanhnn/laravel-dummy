@@ -8,7 +8,7 @@ use Orchestra\Testbench\TestCase as BaseTestCase;
 /**
  * Class TestCase
  *
- * @package     Tests
+ * @package     oanhnn/laravel-dummy
  * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
  * @license     The MIT license
  */

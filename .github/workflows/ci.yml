@@ -5,7 +5,7 @@ on: [push, pull_request]
 jobs:
   # check-sercurity:
   #   name: '[PHP] Check security'
-  #   runs-on: ubuntu-latest
+  #   runs-on: ubuntu-20.04
   #   steps:
   #     - name: Checkout
   #       uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
 
   check-coding-style:
     name: '[PHP] Check coding style'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -40,6 +40,7 @@ jobs:
           - 7.2
           - 7.3
           - 7.4
+          - 8.0
         LARAVEL:
           - 6.*
           - 7.*
@@ -51,7 +52,7 @@ jobs:
           - php: 7.2
             LARAVEL: 8.*
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -118,7 +119,7 @@ jobs:
 
   coveralls-finish:
     needs: [run-tests]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Coveralls Finished
         uses: coverallsapp/github-action@master

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Dummy class
  *
- * @package     Laravel\Dummy\Facades
+ * @package     oanhnn/laravel-dummy
  * @author      Oanh Nguyen <oanhnn.bk@gmail.com>
  * @license     The MIT license
  */
